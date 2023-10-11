@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Memory game</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				height: 100vh;
+				display: flex;
+				background: #7b53ac;
+			}
+
+			.memory-game {
+				width: 900px;
+				height: 640px;
+				margin: auto;
+				display: flex;
+				flex-wrap: wrap;
+				perspective: 1000px;
+			}
+
+			.memory-card {
+				width: calc(25% - 10px);
+				height: calc(33.333% - 10px);
+				margin: 5px;
+				position: relative;
+				transform: scale(1);
+				transform-style: preserve-3d;
+				transition: transform 0.5s;
+				box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+			}
+
+			.memory-card:active {
+				transform: scale(0.97);
+				transition: transform 0.2s;
+			}
+
+			.memory-card.flip {
+				transform: rotateY(180deg);
+			}
+
+			.front-face,
+			.back-face {
+				width: 100%;
+				height: 100%;
+				padding: 8px;
+				position: absolute;
+				border-radius: 5px;
+				background: #e97bb6;
+				backface-visibility: hidden;
+			}
+
+			.front-face {
+				transform: rotateY(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<section class="memory-game">
+			<div class="memory-card" data-fruits="bananas">
+				<img class="front-face" src="img/bananas.jpeg" alt="bananas" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+			<div class="memory-card" data-fruits="bananas">
+				<img class="front-face" src="img/bananas.jpeg" alt="bananas" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+
+			<div class="memory-card" data-fruits="apple">
+				<img class="front-face" src="img/apple.jpeg" alt="apple" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+			<div class="memory-card" data-fruits="apple">
+				<img class="front-face" src="img/apple.jpeg" alt="apple" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+
+			<div class="memory-card" data-fruits="apple-grapes">
+				<img class="front-face" src="img/apple-grapes.jpeg" alt="apple-grapes" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+			<div class="memory-card" data-fruits="apple-grapes">
+				<img class="front-face" src="img/apple-grapes.jpeg" alt="apple-grapes" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+
+			<div class="memory-card" data-fruits="berry">
+				<img class="front-face" src="img/berry.jpeg" alt="berry" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+			<div class="memory-card" data-fruits="berry">
+				<img class="front-face" src="img/berry.jpeg" alt="berry" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+
+			<div class="memory-card" data-fruits="berries">
+				<img class="front-face" src="img/berries.jpeg" alt="berries" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+			<div class="memory-card" data-fruits="berries">
+				<img class="front-face" src="img/berries.jpeg" alt="berries" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+
+			<div class="memory-card" data-fruits="berries2">
+				<img class="front-face" src="img/berries2.jpeg" alt="berries2" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+			<div class="memory-card" data-fruits="berries2">
+				<img class="front-face" src="img/berries2.jpeg" alt="berries2" />
+				<img class="back-face" src="img/fruits.jpeg" alt="fruits" />
+			</div>
+		</section>
+
+	<script src="./scr-1.js"></script>
+	</body>
+</html>
